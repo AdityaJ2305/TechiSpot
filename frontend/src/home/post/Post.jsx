@@ -64,7 +64,11 @@ export default function Post() {
 
   // Function to handle image upload
   const handleImageUpload = (type, upload) => {
+    if(upload === null){
+      return;
+    }
     setFile(upload);
+    // console.log(upload); //
     if (type.startsWith("image")) {
       setImage(upload);
       setVideo("");
